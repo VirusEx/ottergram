@@ -1,12 +1,11 @@
 var DETAIL_IMAGE_SELECTOR = '[data-image-role="target"]';
 var DETAIL_TITLE_SELECTOR = '[data-image-role="title"]';
 var DETAIL_FRAME_SELECTOR = '[data-image-role="frame"]';
-
 var THUMBNAIL_LINK_SELECTOR = '[data-image-role="trigger"]';
 var HIDDEN_DETAIL_CLASS = 'hidden-detail';
 var TINY_EFFECT_CLASS = 'is-tiny';
 var ESC_KEY = 27;
-
+var DETAIL_THUMBNAIL_INDEX = 0;
 
 function setDetails(imageUrl, titleText) {
     'use strict';
@@ -36,9 +35,12 @@ function addThumbClickHandler(thumb) {
     'use strict';
     thumb.addEventListener('click', function(event) {
         event.preventDefault();
-        console.log('clicked');
+        // console.log('clicked');
         setDetailsFromThumb(thumb);
         showDetails();
+
+        var thumbnails = getThumbnailsArray();
+        DETAIL_THUMBNAIL_INDEX = thumbnails.indexOf(thumb);
     });
 }
 
@@ -74,6 +76,22 @@ function addKeyPressHandler() {
             hideDetails();
         }
     });
+}
+
+function prev() {
+    'use strict';
+    var thumbnails = getThumbnailsArray();
+    DETAIL_THUMBNAIL_INDEX--;
+    if(DETAIL_THUMBNAIL_INDEX < 0){ DETAIL_THUMBNAIL_INDEX = thumbnails.length - 1};
+    setDetailsFromThumb(thumbnails[DETAIL_THUMBNAIL_INDEX]);
+}
+
+function next() {
+    'use strict';
+    var thumbnails = getThumbnailsArray();
+    DETAIL_THUMBNAIL_INDEX++;
+    DETAIL_THUMBNAIL_INDEX%=thumbnails.length;
+    setDetailsFromThumb(thumbnails[DETAIL_THUMBNAIL_INDEX]);
 }
 
 function initializeEvents() {

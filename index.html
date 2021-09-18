@@ -14,6 +14,7 @@
   </header>
   <main class="main-content">
     <ul class="thumbnail-list">
+      
     <li class="thumbnail-item">
         <a href="img/otter1.jpg" data-image-role="trigger" data-image-title="Stayin' Alive" data-image-url="img/otter1.jpg">
         <img class="thumbnail-image" src="img/otter1.jpg" alt="Barry the Otter"><span class="thumbnail-title">Barry</span></a></li>
@@ -54,11 +55,18 @@
         <img class="thumbnail-image" src="img/otter5.jpg" alt="Barbara the Otter"><span class="thumbnail-title">Barbara</span></a></li>    
    </ul>
 
+   
     <div class="detail-image-container">
       <div class="detail-image-frame" data-image-role="frame">
         <img class="detail-image" data-image-role="target" src="img/otter1.jpg" alt="">
         <span class="detail-image-title" data-image-role="title">Stayin' Alive</span>
       </div>
+      <div class="button">
+        <button class = "previous round" onclick="prev()">&#8249;</button>
+        <button class = "next round" onclick="next()">&#8250;</button>
+      <!-- <a href="#" id="prev" class="previous round">&#8249;</a>
+      <a href="#" id="next" class="next round">&#8250;</a> -->
+    </div>
     </div>
   </main>
 <script src="scripts/main.js" charset="utf-8"></script>

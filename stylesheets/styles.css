@@ -74,7 +74,6 @@ a {
     display: flex;
     justify-content: space-between;
     list-style: none;
-    padding: 20px 0;
 
     white-space: nowrap;
     overflow-x: auto;
@@ -140,3 +139,24 @@ a {
 .hidden-detail .thumbnail-item {
     max-width: 80%;
 }
+
+.button {
+    padding: 20px;
+    text-align: center;
+    font-size: 40px;
+}
+
+.previous {
+    background-color: #f1f1f1;
+    color: black;
+  }
+  
+  .next {
+    background-color: #f1f1f1;
+    color: black;
+  }
+  
+  .round {
+    padding: 0px 15px;
+    border-radius: 100%;
+  }
